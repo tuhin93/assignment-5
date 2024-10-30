@@ -14,14 +14,25 @@
     <script src="javaScript/myScript.js"></script>
 </head>
 
-<body>
-    <head class="nav-section">
-        <button>Blog</button>
-        <p>Donate Bangladesh</p>
-        <p>5500 BDT</p>
-    </head>
+<body class="overflow-x-hidden">
+    <header class="sticky top-0 backdrop-blur-lg">
+        <nav class="flex justify-around mt-5 bg-[#F9F7F3] sm:flex items-center mx-auto pt-7 pb-14 space-y-3">
+            <!-- button blog -->
+            <button class="px-7 py-3 bg-[#B4F461] rounded-xl font-bold">Blog</button>
+            <!-- donate bangladesh  -->
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="">
+                <p class="font-bold text-2xl">Donate Bangladesh</p>
+            </div>
+            <!-- default balance -->
+            <div class="flex items-center space-x-2">
+                <img src="assets/coin.png" alt="">
+                <p class="font-bold text-[#111111B3]"><span id="main-balance">5000</span> BDT</p>
+            </div>
+        </nav>
+    </header>
     <main>
-        <h1>Hello Bangladesh</h1>
+
     </main>
     <footer></footer>
 </body>
