@@ -1,20 +1,70 @@
-// // button from menu
-// const btnDonate = document.querySelectorAll("btn-donate");
-// const btnHistory = document.getElementById('btn-history');
-// const btnHome = document.getElementById('btn-home');
-// const donationSec = document.getElementById('donation-section');
-// const historySection = document.getElementById('history-section');
-
-// event handler
+// event handler for noakhali flood donation 
 document.getElementById('btn-blog').addEventListener("click", function () {
     window.location.href = "blog.html";
 
 });
 
-document.getElementById('donate-money').addEventListener('click', function(){
+
+document.getElementById('donate-money').addEventListener('click', function () {
     const noakhaliDonateAmount = document.getElementById('noakhali-donate').value;
-    if(noakhaliDonateAmount <= 0){
-        alert('Donate can not be 0 or less than 0');
+    const noakhaliBalance = document.getElementById('noakhali-balance').innerText;
+    const intNoakhaliBalance = parseFloat(noakhaliBalance);
+
+
+    const mainBalance = document.getElementById('main-balance').innerText;
+    const intNoakhaliDonateAmount = parseInt(noakhaliDonateAmount);
+    const intMainBalance = parseInt(mainBalance);
+    const newBalance = intMainBalance - intNoakhaliDonateAmount;
+    const updateNoakhaliBalance = intNoakhaliDonateAmount + intNoakhaliBalance;
+
+    document.getElementById('main-balance').innerText = newBalance;
+    document.getElementById('noakhali-balance').innerText = updateNoakhaliBalance;
+
+
+
+    if (noakhaliDonateAmount <= 0 || intMainBalance < intNoakhaliDonateAmount) {
+        alert('Donate can not be less than 0 or bigger than main balance');
     }
-     
+
+
+})
+
+
+// event handler for feni button
+document.getElementById('btn-donate-feni').addEventListener('click', function () {
+    const feniBalance = document.getElementById('feni-balance').innerText;
+    const mainBalance = document.getElementById('main-balance').innerText;
+    const intFeniBalance = parseFloat(feniBalance);
+    const intMainBalance = parseFloat(mainBalance);
+    const inputFeni = document.getElementById('feni-input').value;
+
+    const newBalance = intMainBalance - inputFeni;
+    const newFeniBalance = parseFloat(intFeniBalance) + parseFloat(inputFeni);
+
+    document.getElementById('feni-balance').innerText = newFeniBalance;
+    document.getElementById('main-balance').innerText = newBalance;
+
+    if (inputFeni <= 0 || inputFeni > mainBalance) {
+        alert('Wrong input try again later!')
+    }
+
+})
+
+// click handler for quota
+document.getElementById('btn-quota').addEventListener('click', function () {
+
+    const quotaBalance = document.getElementById('quota-balance').innerText;
+
+    const mainBalance = document.getElementById('main-balance').innerText;
+
+    const inputQuota = document.getElementById('input-quota').value;
+    const newBalance = parseFloat(mainBalance) - parseFloat(inputQuota);
+    const newQuotaBalance = parseFloat(inputQuota) + parseFloat(quotaBalance);
+
+    document.getElementById('quota-balance').innerText = newQuotaBalance;
+    document.getElementById('main-balance').innerText = newBalance;
+
+    if (inputQuota <= 0 || inputQuota > mainBalance) {
+        alert('donate amount can not be more than balance and less than 0');
+    }
 })

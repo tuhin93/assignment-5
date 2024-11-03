@@ -43,6 +43,22 @@
         <!-- card section -->
         <section id="donation-section" class="mt-10 w-4/5 mx-auto space-y-4">
             <!-- card 1 section start -->
+            <div id="modal-noakhali" class="hidden">
+                <!-- Open the modal using ID.showModal() method -->
+                <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+                <dialog id="my_modal_1" class="modal">
+                    <div class="modal-box">
+                        <h3 class="text-lg font-bold">Hello!</h3>
+                        <p class="py-4">Press ESC key or click the button below to close</p>
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
             <section
                 class="lg:flex space-x-5 my-5 p-4 border-solid border-2 w-full border-stone-100 rounded-xl md:w-10/12 mx-auto  px-5 md:px-0 ">
                 <!-- left image area -->
@@ -53,7 +69,7 @@
                 <div class="space-y-3 flex-1 p-2">
                     <button class="flex items-center px-6 py-2 rounded-xl bg-slate-100 font-bold space-x-2">
                         <img src="assets/coin.png" alt="">
-                        <p><span id="donate-amount-noakhali">0</span> BDT</p>
+                        <p><span id="noakhali-balance">0</span> BDT</p>
                     </button>
                     <h4 class="font-bold text-xl">Donate for Flood at Noakhali, Bangladesh</h4>
                     <p class="text-[#111111B3]">The recent floods in Noakhali have caused significant damage to homes
@@ -85,7 +101,7 @@
                 <div class="space-y-3 flex-1 p-2">
                     <button class="flex items-center px-6 py-2 rounded-xl bg-slate-100 p-4 font-bold space-x-2">
                         <img src="assets/coin.png" alt="">
-                        <p><span id="donate-amount">600</span> BDT</p>
+                        <p><span id="feni-balance">600</span> BDT</p>
                     </button>
                     <h4 class="font-bold text-xl p-2">Donate for Flood Relief in Feni,Bangladesh</h4>
                     <p class="text-[#111111B3] p-2">The recent floods in Feni have devastated local communities, leading
@@ -97,10 +113,10 @@
                         counts
                         towards making a real difference. Please consider donating today to assist those in urgent need.
                     </p>
-                    <input id="noakhali-donate"
+                    <input id="feni-input"
                         class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg" type="number" name=""
                         placeholder="Write Donation Amount">
-                    <button id="donate-feni"
+                    <button id="btn-donate-feni"
                         class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full">Donate Now</button>
                 </div>
 
@@ -117,7 +133,7 @@
                 <div class="space-y-3 flex-1 p-2">
                     <button class="flex items-center px-6 py-2 rounded-xl bg-slate-100 font-bold space-x-2">
                         <img src="assets/coin.png" alt="">
-                        <p><span id="donate-quota">2400</span> BDT</p>
+                        <p><span id="quota-balance">2400</span> BDT</p>
                     </button>
                     <h4 class="font-bold text-xl">Aid for Injured in the Quota Movement</h4>
                     <p class="text-[#111111B3]">The recent Quota movement has resulted in numerous injuries and
@@ -128,10 +144,10 @@
                         donation plays a vital role in alleviating their suffering and aiding in their recovery. Please
                         consider making a donation to support these brave individuals in their time of need.
                     </p>
-                    <input id="noakhali-donate"
+                    <input id="input-quota"
                         class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg" type="number" name=""
                         placeholder="Write Donation Amount">
-                    <button id="donate-money"
+                    <button id="btn-quota"
                         class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full">Donate Now</button>
                 </div>
             </section>
@@ -139,15 +155,15 @@
         <!-- history section -->
         <section id="history-section" class="mt-10 w-4/5 mx-auto border-[rgba(17,17,17,0.1)] hidden ">
             <div id="history-div" class="flex flex-col gap-4">
-                
+
             </div>
-         </section>
+        </section>
     </main>
     <footer id="footer-history">
         <div class="bg-[#F9F7F3] h-20">
             <p class="text-center pt-6">&copy; 2024 Q&A Blog. All rights reserved.</p>
         </div>
-        
+
     </footer>
     <script src="javaScript/myScript.js"></script>
 </body>
