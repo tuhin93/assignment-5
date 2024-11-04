@@ -22,9 +22,16 @@ document.getElementById('donate-money').addEventListener('click', function () {
 
 
 
-    if (noakhaliDonateAmount <= 0 || intMainBalance < intNoakhaliDonateAmount) {
+    if (noakhaliDonateAmount <= 0 ) {
         alert('Donate can not be less than 0 or bigger than main balance');
+        return;
     }
+
+    else if(noakhaliDonateAmount > mainBalance){
+        alert('Donate amount can not be bigger than main balanc!')
+    }
+
+  
 
 
 })
@@ -46,6 +53,7 @@ document.getElementById('btn-donate-feni').addEventListener('click', function ()
 
     if (inputFeni <= 0 || inputFeni > mainBalance) {
         alert('Wrong input try again later!')
+        return;
     }
 
 })
@@ -63,6 +71,7 @@ document.getElementById('btn-quota').addEventListener('click', function () {
 
     document.getElementById('quota-balance').innerText = newQuotaBalance;
     document.getElementById('main-balance').innerText = newBalance;
+    onclick()
 
     if (inputQuota <= 0 || inputQuota > mainBalance) {
         alert('donate amount can not be more than balance and less than 0');

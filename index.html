@@ -33,7 +33,7 @@
             </div>
         </nav>
     </header>
-    <main id="food-donate-saction">
+    <main id="donate-section">
         <!-- donate and history button -->
         <section class="flex justify-center space-x-2 mt-6">
             <button id="btn-donation"
@@ -43,22 +43,7 @@
         <!-- card section -->
         <section id="donation-section" class="mt-10 w-4/5 mx-auto space-y-4">
             <!-- card 1 section start -->
-            <div id="modal-noakhali" class="hidden">
-                <!-- Open the modal using ID.showModal() method -->
-                <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
-                <dialog id="my_modal_1" class="modal">
-                    <div class="modal-box">
-                        <h3 class="text-lg font-bold">Hello!</h3>
-                        <p class="py-4">Press ESC key or click the button below to close</p>
-                        <div class="modal-action">
-                            <form method="dialog">
-                                <!-- if there is a button in form, it will close the modal -->
-                                <button class="btn">Close</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
-            </div>
+
             <section
                 class="lg:flex space-x-5 my-5 p-4 border-solid border-2 w-full border-stone-100 rounded-xl md:w-10/12 mx-auto  px-5 md:px-0 ">
                 <!-- left image area -->
@@ -84,8 +69,24 @@
                     <input id="noakhali-donate"
                         class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg" type="number" name=""
                         placeholder="Write Donation Amount">
-                    <button id="donate-money"
-                        class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full">Donate Now</button>
+                    <button id="donate-money" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full"
+                        onclick="my_modal_1.showModal()">Donate Now</button>
+                    <!-- Modal start -->
+                    <div>
+                        <!-- Open the modal using ID.showModal() method -->
+                        <dialog id="my_modal_1" class="modal">
+                            <div class="modal-box">
+                                <h3 class="text-lg font-bold">Hello!</h3>
+                                <p class="py-4">Thank You for your donation</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
                 </div>
 
             </section>
@@ -113,10 +114,9 @@
                         counts
                         towards making a real difference. Please consider donating today to assist those in urgent need.
                     </p>
-                    <input id="feni-input"
-                        class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg" type="number" name=""
-                        placeholder="Write Donation Amount">
-                    <button id="btn-donate-feni"
+                    <input id="feni-input" class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg"
+                        type="number" name="" placeholder="Write Donation Amount">
+                    <button  onclick="my_modal_1.showModal()" id="btn-donate-feni"
                         class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full">Donate Now</button>
                 </div>
 
@@ -144,11 +144,9 @@
                         donation plays a vital role in alleviating their suffering and aiding in their recovery. Please
                         consider making a donation to support these brave individuals in their time of need.
                     </p>
-                    <input id="input-quota"
-                        class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg" type="number" name=""
-                        placeholder="Write Donation Amount">
-                    <button id="btn-quota"
-                        class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full">Donate Now</button>
+                    <input id="input-quota" class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg"
+                        type="number" name="" placeholder="Write Donation Amount">
+                    <button id="btn-quota" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full" onclick="my_modal_1.showModal()">Donate Now</button>
                 </div>
             </section>
         </section>
@@ -161,7 +159,7 @@
     </main>
     <footer id="footer-history">
         <div class="bg-[#F9F7F3] h-20">
-            <p class="text-center pt-6">&copy; 2024 Q&A Blog. All rights reserved.</p>
+            <p class="text-center pt-6">&copy; Year 2024 All rights reserved by Tuhin &reg;.</p>
         </div>
 
     </footer>
