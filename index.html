@@ -16,7 +16,7 @@
 </head>
 
 <body class="overflow-x-hidden">
-    <header class="sticky top-0 backdrop-blur-lg">
+    <header class="sticky top-0 backdrop-blur-sm">
         <nav
             class="flex justify-around pt-5 bg-[#F9F7F3] sm:flex items-center mx-auto md:pb-14 pb-5 space-y-3 p-4 gap-3 md:flex md:justify-between md:items-center md:py-4">
             <!-- button blog -->
@@ -32,14 +32,18 @@
                 <p class="font-bold text-[#111111B3]"><span id="main-balance">5000</span> BDT</p>
             </div>
         </nav>
+        <section>
+            <!-- donate and history button -->
+            <section class="flex justify-center space-x-2 mt-6">
+                <button id="btn-donation"
+                    class="px-7 py-3 rounded-xl border-slate-100 border-2 font-bold bg-[#B4F461]">Donation</button>
+                <button id="btn-history"
+                    class="px-7 py-3 rounded-xl border-slate-100 border-2 font-bold">History</button>
+            </section>
+        </section>
     </header>
     <main id="donate-section">
-        <!-- donate and history button -->
-        <section class="flex justify-center space-x-2 mt-6">
-            <button id="btn-donation"
-                class="px-7 py-3 rounded-xl border-slate-100 border-2 font-bold bg-[#B4F461]">Donation</button>
-            <button id="btn-history" class="px-7 py-3 rounded-xl border-slate-100 border-2 font-bold">History</button>
-        </section>
+
         <!-- card section -->
         <section id="donation-section" class="mt-10 w-4/5 mx-auto space-y-4">
             <!-- card 1 section start -->
@@ -91,7 +95,7 @@
 
             </section>
 
-            <!-- card 2 section -->
+            <!-- card 2 Feni donation  section -->
             <section
                 class="lg:flex space-x-5 my-5 border-solid border-2 w-full border-stone-100 rounded-xl md:w-10/12 mx-auto px-5 md:px-0">
                 <!-- left image area -->
@@ -116,7 +120,7 @@
                     </p>
                     <input id="feni-input" class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg"
                         type="number" name="" placeholder="Write Donation Amount">
-                    <button  onclick="my_modal_1.showModal()" id="btn-donate-feni"
+                    <button onclick="my_modal_1.showModal()" id="btn-donate-feni"
                         class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full">Donate Now</button>
                 </div>
 
@@ -146,23 +150,26 @@
                     </p>
                     <input id="input-quota" class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg"
                         type="number" name="" placeholder="Write Donation Amount">
-                    <button id="btn-quota" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full" onclick="my_modal_1.showModal()">Donate Now</button>
+                    <button id="btn-quota" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full"
+                        onclick="my_modal_1.showModal()">Donate Now</button>
                 </div>
             </section>
         </section>
-        <!-- history section -->
-        <section id="history-section" class="mt-10 w-4/5 mx-auto border-[rgba(17,17,17,0.1)] hidden ">
-            <div id="history-div" class="flex flex-col gap-4">
 
-            </div>
+        <!-- history section -->
+
+        <section id="history-section" class="flex-col gap-4 text-center hidden">
+            <h1 class="text-3xl text-lime-500">This is history section</h1>
         </section>
+
     </main>
-    <footer id="footer-history">
+    <footer id="footer-section">
         <div class="bg-[#F9F7F3] h-20">
             <p class="text-center pt-6">&copy; Year 2024 All rights reserved by Tuhin &reg;.</p>
         </div>
 
     </footer>
+    <script src="javaScript/utilities.js"></script>
     <script src="javaScript/myScript.js"></script>
 </body>
 
