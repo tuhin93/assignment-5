@@ -4,6 +4,7 @@ document.getElementById('btn-blog').addEventListener("click", function () {
 
 });
 
+// Adding event handler for Noakhali
 
 document.getElementById('donate-money').addEventListener('click', function () {
     const noakhaliDonateAmount = document.getElementById('noakhali-donate').value;
@@ -16,12 +17,15 @@ document.getElementById('donate-money').addEventListener('click', function () {
     const intMainBalance = parseInt(mainBalance);
     const newBalance = intMainBalance - intNoakhaliDonateAmount;
     const updateNoakhaliBalance = intNoakhaliDonateAmount + intNoakhaliBalance;
+    const currentTime = new Date().toLocaleString('en-GB', { timeZoneName: 'short' })
 
     document.getElementById('main-balance').innerText = newBalance;
     document.getElementById('noakhali-balance').innerText = updateNoakhaliBalance;
 
     const log = document.createElement('p');
-    log.innerText = `You have donated ${intNoakhaliDonateAmount} Tk for Noakhali Flood.`
+    log.innerHTML = `
+    <p class ="border-spacing-1"> You donate ${intNoakhaliDonateAmount} tk for <span class ="text-green-500 font-semibold"> Noakhali </span></p>
+    <p class ="border-spacing-2 shadow-lg">Date: ${currentTime}</p>`;
     document.getElementById('history-section').appendChild(log);
 
 
@@ -31,12 +35,9 @@ document.getElementById('donate-money').addEventListener('click', function () {
         return;
     }
 
-   if (mainBalance < intNoakhaliDonateAmount) {
+    if (intMainBalance < intNoakhaliDonateAmount) {
         alert('Donate amount can not be bigger than main balance!')
     }
-
-
-
 
 })
 
@@ -54,14 +55,21 @@ document.getElementById('btn-donate-feni').addEventListener('click', function ()
 
     document.getElementById('feni-balance').innerText = newFeniBalance;
     document.getElementById('main-balance').innerText = newBalance;
+    const currentTime = new Date().toLocaleString('en-GB', { timeZoneName: 'short' })
 
-    const history = document.createElement('p');
-    history.innerText = ` You have successfully donated for feni flood ${inputFeni} Tk your current balance is ${newBalance}` ;
+    const history = document.createElement('div');
+    history.innerHTML = `
+              <p class =""> You donate ${inputFeni} tk for <span class ="text-green-500 font-semibold"> Feni </span></p>
+              <p class ="shadow-lg">Date: ${currentTime}</p>`;
     document.getElementById('history-section').appendChild(history);
 
-    if (inputFeni <= 0 || inputFeni > mainBalance) {
+    if (inputFeni <= 0) {
         alert('Wrong input try again later!')
         return;
+    }
+
+    if (inputFeni > intMainBalance) {
+        alert('You have not enough balance!');
     }
 
 })
@@ -73,31 +81,41 @@ document.getElementById('btn-quota').addEventListener('click', function () {
     const inputQuota = inputValueById('input-quota');
 
     const mainBalance = document.getElementById('main-balance').innerText;
-    const newBalance = parseFloat(mainBalance) - parseFloat(inputQuota);
+    const intMainBalance = parseFloat(mainBalance)
+    const intInputQuota = parseFloat(inputQuota)
+    const newBalance = mainBalance - inputQuota;
 
     // const inputQuota = document.getElementById('input-quota').value;
-    const newQuotaBalance = parseFloat(inputQuota) + parseFloat(quotaBalance);
+    const newQuotaBalance = intInputQuota + intInputQuota;
 
     document.getElementById('quota-balance').innerText = newQuotaBalance;
     document.getElementById('main-balance').innerText = newBalance;
 
-    if (inputQuota <= 0 || inputQuota > mainBalance) {
+    // create donation history for section Quota
+    const currentTime = new Date().toLocaleString('en-GB', { timeZoneName: 'short'})
+    const donationLog = document.createElement('p');
+    donationLog.innerHTML = `
+    <p class =""> You donate ${inputQuota} tk for <span class ="text-green-500 font-semibold"> Quota </span></p>
+    <p class ="shadow-lg">Date: ${currentTime}</p>`;
+    document.getElementById('history-section').appendChild(donationLog);
+
+    if (intMainBalance <= 0 || inputQuota > intInputQuota) {
         alert('donate amount can not be more than balance and less than 0');
     }
 })
 
 document.getElementById('btn-history').addEventListener('click', function () {
     hideAllSection('history-section');
-    
+
 })
 
-document.getElementById('btn-donation').addEventListener('click',function(){
+document.getElementById('btn-donation').addEventListener('click', function () {
     hideAllSection('donation-section');
 })
 
-document.getElementById('btn-donation').addEventListener('click',function(){
+document.getElementById('btn-donation').addEventListener('click', function () {
     toggleColor('btn-donation');
 })
-document.getElementById('btn-history').addEventListener('click',function(){
+document.getElementById('btn-history').addEventListener('click', function () {
     toggleColor('btn-history');
 })
