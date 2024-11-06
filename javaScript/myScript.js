@@ -3,14 +3,12 @@ document.getElementById('btn-blog').addEventListener("click", function () {
     window.location.href = "blog.html";
 
 });
-
 // Adding event handler for Noakhali
 
 document.getElementById('donate-money').addEventListener('click', function () {
     const noakhaliDonateAmount = document.getElementById('noakhali-donate').value;
     const noakhaliBalance = document.getElementById('noakhali-balance').innerText;
     const intNoakhaliBalance = parseFloat(noakhaliBalance);
-
 
     const mainBalance = document.getElementById('main-balance').innerText;
     const intNoakhaliDonateAmount = parseInt(noakhaliDonateAmount);
@@ -31,12 +29,18 @@ document.getElementById('donate-money').addEventListener('click', function () {
 
 
     if (intNoakhaliDonateAmount <= 0) {
-        alert('Donate can not be less than 0 or bigger than main balance');
+        alert('Donate can not be less than 0');
         return;
     }
 
     if (intMainBalance < intNoakhaliDonateAmount) {
         alert('Donate amount can not be bigger than main balance!')
+        return;
+    }
+
+    if(isNaN(intNoakhaliDonateAmount)){
+        alert('Please input valid number');
+        return;
     }
 
 })
@@ -99,8 +103,9 @@ document.getElementById('btn-quota').addEventListener('click', function () {
     <p class ="shadow-lg">Date: ${currentTime}</p>`;
     document.getElementById('history-section').appendChild(donationLog);
 
-    if (intMainBalance <= 0 || inputQuota > intInputQuota) {
+    if (intInputQuota <= 0 || intMainBalance < intInputQuota) {
         alert('donate amount can not be more than balance and less than 0');
+        return;
     }
 })
 

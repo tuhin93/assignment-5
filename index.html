@@ -75,22 +75,7 @@
                         placeholder="Write Donation Amount">
                     <button id="donate-money" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full"
                         onclick="my_modal_1.showModal()">Donate Now</button>
-                    <!-- Modal start -->
-                    <div>
-                        <!-- Open the modal using ID.showModal() method -->
-                        <dialog id="my_modal_1" class="modal">
-                            <div class="modal-box">
-                                <h3 class="text-xl text-center font-bold">Congratulation's!</h3>
-                                <p class="py-4 text-center">You Have Successfully Donated For HumanKind</p>
-                                <div class="modal-action">
-                                    <form method="dialog">
-                                        <!-- if there is a button in form, it will close the modal -->
-                                        <button class="btn">Close</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </dialog>
-                    </div>
+
                 </div>
 
             </section>
@@ -150,14 +135,33 @@
                     </p>
                     <input id="input-quota" class="py-2 px-3 border-solid border-2 w-full border-stone-300 rounded-lg"
                         type="number" name="" placeholder="Write Donation Amount">
-                    <button id="btn-quota" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full" onclick="my_modal_1.showModal()">Donate Now</button>
+                    <button id="btn-quota" class="btn-donate px-7 py-3 bg-[#B4F461] rounded-xl font-bold w-full"
+                        onclick="my_modal_1.showModal()">Donate Now</button>
                 </div>
             </section>
         </section>
 
+        <div>
+            <!-- Modal start -->
+            <div>
+                <!-- Open the modal using ID.showModal() method -->
+                <dialog id="my_modal_1" class="modal">
+                    <div class="modal-box">
+                        <h3 class="text-xl text-center font-bold">Congratulation's!</h3>
+                        <p class="py-4 text-center">You Have Successfully Donated For HumanKind</p>
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+        </div>
         <!-- history section -->
 
-        <section id="history-section" class="flex-col gap-4 text-center hidden">
+        <section id="history-section" class=" hidden flex-col gap-4 text-center">
             <h1 class="text-3xl text-lime-500">This is history section for DONATION</h1>
         </section>
 
